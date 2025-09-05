@@ -26,8 +26,12 @@ public:
 
 	void AddNode( int nValue );
 
+	int CountNodes();
+
 	void DeleteNodeWithValue( int nValue );
 
 	void Display();
+
+	int GetData( int nWhichNode );
 
 }; // End of class LinkedList

@@ -5,6 +5,8 @@
 int main()
 {
 	LinkedList linkedList;
+	int nNodeCount;
+	int nWhichNode;
 
 	// Populate list
 	linkedList.AddNode( 1 );
@@ -39,6 +41,20 @@ int main()
 	// Display linked list
 	printf( "After Deleting last node:\t" );
 	linkedList.Display();
+
+	// Count nodes
+	nNodeCount = linkedList.CountNodes();
+
+	// Print node count
+	printf( "\r\n%d Nodes:\r\n", nNodeCount );
+
+	// Loop through all nodes
+	for( nWhichNode = 0; nWhichNode < nNodeCount; nWhichNode ++ )
+	{
+		// Display node
+		printf( " Node %d:\t%d\r\n", nWhichNode, linkedList.GetData( nWhichNode ) );
+
+	}; // End of loop through all nodes
 
 	return 0;
 }

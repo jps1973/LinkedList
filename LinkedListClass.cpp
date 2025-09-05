@@ -74,6 +74,28 @@ void LinkedList::AddNode( int nValue )
 
 } // End of function LinkedList::AddNode
 
+int LinkedList::CountNodes()
+{
+	int nResult = 0;
+
+	// Copy head node into temp node
+	Node *lpTempNode = m_headNode;
+
+	// Loop through all nodes
+	while( lpTempNode != NULL )
+	{
+		// Update return value
+		nResult ++;
+
+		// Get next node
+		lpTempNode = lpTempNode->m_lpNextNode;
+
+	}; // End of loop through all nodes
+
+	return nResult;
+
+} // End of function LinkedList::CountNodes
+
 void LinkedList::DeleteNodeWithValue( int nValue )
 {
 	// Ensure that linked list is not empty
@@ -155,3 +177,51 @@ void LinkedList::Display()
 	printf( "NULL\r\n" );
 
 } // End of function LinkedList::Display
+
+int LinkedList::GetData( int nWhichNode )
+{
+	int nResult = -1;
+
+	int nCurrentNode = 0;
+
+	// Copy head node into temp node
+	Node *lpTempNode = m_headNode;
+
+	// Loop through all nodes
+	while( lpTempNode != NULL )
+	{
+		// See if current node is the required node
+		if( nCurrentNode == nWhichNode )
+		{
+			// Current node is the required node
+
+			// Update return value
+			nResult = lpTempNode->m_nData;
+
+			// Force exit from loop
+			lpTempNode = NULL;
+
+		} // End of current node is the required node
+		else
+		{
+			// Current node is not the required node
+
+			// Advance current node
+			nCurrentNode ++;
+
+			// Get next node
+			lpTempNode = lpTempNode->m_lpNextNode;
+
+		} // End of current node is not the required node
+
+	}; // End of loop through all nodes
+
+	return nResult;
+
+} // End of function LinkedList::GetData
+
+/*
+int LinkedList::
+{
+} // End of function LinkedList::
+*/
